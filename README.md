@@ -1,2 +1,2 @@
-# Richom-tre
+# Richometre
 Application Web fullstack de Paul BOSTOEN et de Baptiste MAIRE
