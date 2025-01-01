@@ -1,0 +1,15 @@
+services:
+  fullstack-courses-Richometre-database:
+    container_name: Richometre-database
+    image: postgres:16.4
+    ports:
+      - 5432:5432
+    volumes:
+      - Richometre-database:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: Richometredb
+      POSTGRES_USER: polytech
+      POSTGRES_PASSWORD: polytech
+
+volumes:
+  Richometre-database:
