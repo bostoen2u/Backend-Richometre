@@ -38,8 +38,8 @@ public class WebSecurityConfiguration implements WebMvcConfigurer {
                 .headers(headers -> headers
                         .frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)
                 )
-                .authorizeHttpRequests(requests -> requests.
-                        requestMatchers(HttpMethod.GET, "/actuator/**").permitAll()
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers(HttpMethod.GET, "/actuator/**").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/favicon.ico").permitAll()
                         .requestMatchers(HttpMethod.GET, "/error").permitAll()
@@ -55,6 +55,11 @@ public class WebSecurityConfiguration implements WebMvcConfigurer {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
 
                         .requestMatchers(HttpMethod.GET, "/movies/**").permitAll()
+
+                        // Autorisation pour `/portefeuille`
+                        .requestMatchers(HttpMethod.GET, "/portefeuille").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/portefeuille").permitAll()
+
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(new JwtAuthenticationFilter(objectMapper, userRepository, jwtManager), AnonymousAuthenticationFilter.class);
@@ -62,12 +67,13 @@ public class WebSecurityConfiguration implements WebMvcConfigurer {
         return http.build();
     }
 
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .exposedHeaders(HttpHeaders.CONTENT_DISPOSITION)
-                .allowedOrigins("*")
-                .allowedMethods("*");
+                .allowedOrigins("http://localhost:3000") // Frontend
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Méthodes autorisées
+                .allowedHeaders("*") // Tous les en-têtes autorisés
+                .allowCredentials(true); // Autorise les cookies/credentials
     }
 }
