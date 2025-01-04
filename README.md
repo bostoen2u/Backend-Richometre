@@ -24,11 +24,11 @@ Un indicateur est disponible sur notre page d'accueil, il estime votre « nive
 4. Comment lancer l’application
 
     Backend :
-        Cloner le repo du backend : https://github.com/bostoen2u/Backend-Richometre.git
-        Exécuter sprint boot depuis votre ide.
-        Le serveur tourne sur http://localhost:8080
+         Cloner le repo du backend : https://github.com/bostoen2u/Backend-Richometre.git
+         Exécuter sprint boot depuis votre ide
+         Le serveur tourne sur http://localhost:8080
 
     Frontend :
-        Cloner le repo du frontend :
-        Lancer l’application : npm run dev
-        L’application tourne sur http://localhost:3000
+         Cloner le repo du frontend : https://github.com/BaptGitiste/Frontend-Richometre.git
+         Lancer l’application : npm run dev
+         L’application tourne sur http://localhost:3000
