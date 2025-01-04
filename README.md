@@ -18,15 +18,14 @@ Un indicateur est disponible sur notre page d'accueil, il estime votre « nive
 
     Fonctionnalités :
         Gestion des transactions : Endpoint /portefeuille pour créer et récupérer les actions/crypto
-        Services : Calcul de cours du jour via l'API Alpha Vantage (gratuite donc limité). Nous avons quelque soucis avec cette API,
-           dans le cas ou la rêquete n'abouti pas nous simulons le cours du jour (valeur au hasard).
+        Services : Calcul de cours du jour via l'API Alpha Vantage (gratuite donc limité). Nous avons quelque soucis avec cette API, dans le cas ou la rêquete n'abouti pas nous simulons le cours du jour (valeur au hasard).
 
 
 4. Comment lancer l’application
 
     Backend :
-        Cloner le repo du backend : 
-        Exécuter sprint boot depuis votre ide
+        Cloner le repo du backend : https://github.com/bostoen2u/Backend-Richometre.git
+        Exécuter sprint boot depuis votre ide.
         Le serveur tourne sur http://localhost:8080
 
     Frontend :
